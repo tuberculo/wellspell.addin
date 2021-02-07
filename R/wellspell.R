@@ -132,7 +132,7 @@ check <- function(find_bad_function) {
   }
 
   # get selected text from RStudio API
-  context <- rstudioapi::getSourceEditorContext()
+  context <- rstudioapi::selectionGet(id = rstudioapi::documentId(allowConsole = FALSE))
 
   # check context
   if (nchar(context$path) == 0) {
